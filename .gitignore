@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.log
+.sites-runtime/
+public/ocr/
+public/fonts/
