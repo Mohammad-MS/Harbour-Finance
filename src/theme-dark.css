@@ -1,0 +1,40 @@
+:root[data-theme=dark]{color-scheme:dark;color:#e6edf5;background:#0d1420;--navy:#182639;--ink:#e6edf5;--muted:#a5b3c5;--border:#2c3a4c;--green:#83d6b4;--lime:#bde5a6;--gold:#e1bf78;--red:#f0939a;--alloc-crypto:#7599cf;--alloc-etf:#83c3aa;--alloc-gold:#e1bf78;--chart-line:#83d6b4;--chart-fill:#83d6b4}
+:root[data-theme=dark] :focus-visible{outline-color:#83d6b4}
+:root[data-theme=dark] .sidebar{background:#101a28}
+:root[data-theme=dark] .topbar,:root[data-theme=dark] .panel,:root[data-theme=dark] .stat-card,:root[data-theme=dark] .modal{background:#172232;color:#e6edf5;border-color:var(--border)}
+:root[data-theme=dark] .stat-card.dark{background:#20334a;border-color:#3b506b}
+:root[data-theme=dark] .button,:root[data-theme=dark] .compact-select,:root[data-theme=dark] .month-picker,:root[data-theme=dark] .search-field,:root[data-theme=dark] input:not([type=checkbox]),:root[data-theme=dark] select,:root[data-theme=dark] textarea{background:#111c2b;color:#e6edf5;border-color:#3c4c61}
+:root[data-theme=dark] input::placeholder,:root[data-theme=dark] textarea::placeholder{color:#99a8bb}
+:root[data-theme=dark] .button.primary{background:#bde5a6;border-color:#bde5a6;color:#142137}
+:root[data-theme=dark] .button.primary:hover{background:#cceebe}
+:root[data-theme=dark] .button.danger,:root[data-theme=dark] .form-error,:root[data-theme=dark] .notice.error{background:#39212b;color:#ffb1b7;border-color:#69404a}
+:root[data-theme=dark] .icon-button,:root[data-theme=dark] .breadcrumb button,:root[data-theme=dark] .back-overview,:root[data-theme=dark] label,:root[data-theme=dark] th,:root[data-theme=dark] .stat-label,:root[data-theme=dark] .stat-foot,:root[data-theme=dark] .eyebrow,:root[data-theme=dark] .body-copy,:root[data-theme=dark] .form-hint,:root[data-theme=dark] .source-note,:root[data-theme=dark] .source-list p,:root[data-theme=dark] .panel-heading p,:root[data-theme=dark] td small,:root[data-theme=dark] th small,:root[data-theme=dark] .status-label,:root[data-theme=dark] .chart-axis,:root[data-theme=dark] .chart-y,:root[data-theme=dark] .chart-source,:root[data-theme=dark] .subtle-note,:root[data-theme=dark] .allocation-legend span,:root[data-theme=dark] .allocation-legend small,:root[data-theme=dark] .donut small,:root[data-theme=dark] .empty,:root[data-theme=dark] .empty p,:root[data-theme=dark] .transaction-summary,:root[data-theme=dark] .type-tag,:root[data-theme=dark] .import-steps,:root[data-theme=dark] .import-history-row small,:root[data-theme=dark] .review-footer small,:root[data-theme=dark] footer{color:#a5b3c5}
+:root[data-theme=dark] .text-button,:root[data-theme=dark] .source-list a,:root[data-theme=dark] .positive,:root[data-theme=dark] .type-tag.income,:root[data-theme=dark] .type-tag.refund{color:#83d6b4}
+:root[data-theme=dark] .icon-button:hover,:root[data-theme=dark] .modal-heading .icon-button{background:#27364a}
+:root[data-theme=dark] .currency-switch,:root[data-theme=dark] .segmented,:root[data-theme=dark] .theme-switch,:root[data-theme=dark] .mapping,:root[data-theme=dark] .category-tag,:root[data-theme=dark] .badge,:root[data-theme=dark] tfoot td{background:#111c2b;border-color:var(--border);color:#b8c5d5}
+:root[data-theme=dark] .currency-switch .selected,:root[data-theme=dark] .segmented .selected{background:#354a62;color:#f4f8fc;box-shadow:none}
+:root[data-theme=dark] .currency-switch button,:root[data-theme=dark] .segmented button{color:#b8c5d5}
+:root[data-theme=dark] td,:root[data-theme=dark] th,:root[data-theme=dark] .holdings-preview,:root[data-theme=dark] .danger-zone,:root[data-theme=dark] .modal-actions,:root[data-theme=dark] .paste-details,:root[data-theme=dark] .review-footer{border-color:var(--border)}
+:root[data-theme=dark] .progress{background:#2a3a4b}
+:root[data-theme=dark] .donut>div{background:#172232;border-color:#172232}
+:root[data-theme=dark] .main-chart{background:repeating-linear-gradient(to top,transparent 0,transparent calc(25% - 1px),#293749 calc(25% - 1px),#293749 25%)}
+:root[data-theme=dark] .next-step,:root[data-theme=dark] .runway,:root[data-theme=dark] .demo-banner,:root[data-theme=dark] .welcome-banner{background:#1e342e;border-color:#365349;color:#b9d1c6}
+:root[data-theme=dark] .next-step p,:root[data-theme=dark] .runway>p,:root[data-theme=dark] .runway-note,:root[data-theme=dark] .calculation>div{color:#b9d1c6}
+:root[data-theme=dark] .runway-total,:root[data-theme=dark] .calculation b,:root[data-theme=dark] .welcome-banner b{color:#d5ecd9}
+:root[data-theme=dark] .runway-total.negative{color:var(--red)}
+:root[data-theme=dark] .runway-note{border-color:#365349}
+:root[data-theme=dark] .next-step .button{background:#172b24;color:#bde5a6;border-color:#58715c}
+:root[data-theme=dark] .notice,:root[data-theme=dark] .import-issues{background:#352f21;border-color:#5d5035;color:#e1c995}
+:root[data-theme=dark] .drop-zone{background:#14271f;border-color:#567b68}
+:root[data-theme=dark] .drop-zone:hover,:root[data-theme=dark] .drop-zone.dragover{background:#1e342e}
+:root[data-theme=dark] .drop-zone p,:root[data-theme=dark] .drop-zone small,:root[data-theme=dark] .import-guidance li p,:root[data-theme=dark] .privacy-card p{color:#b2c5b9}
+:root[data-theme=dark] .import-guidance li b,:root[data-theme=dark] .privacy-card b,:root[data-theme=dark] .empty h4,:root[data-theme=dark] .transaction-summary b{color:#e6edf5}
+:root[data-theme=dark] .import-steps .active{color:#bde5a6}
+:root[data-theme=dark] .import-steps .active i{background:#263d30;border-color:#567b68}
+:root[data-theme=dark] .theme-option{background:#111c2b;border-color:#3c4c61;color:#e6edf5}
+:root[data-theme=dark] .theme-option.selected{border-color:#83d6b4;box-shadow:0 0 0 1px #83d6b4}
+:root[data-theme=dark] .theme-option small{color:#a5b3c5}
+.swatch.dark{background:linear-gradient(135deg,#101a28 50%,#83d6b4 50%)}
+.theme-preview.dark{background:#0d1420}.theme-preview.dark i:nth-child(1){background:#20334a}.theme-preview.dark i:nth-child(2){background:#83d6b4}.theme-preview.dark i:nth-child(3){background:#172232}
+:root[data-theme=dark] .asset-icon.asset-logo{background:transparent!important}
+:root[data-theme=dark] .asset-icon.gold.asset-logo{background:#392f1c!important}
