@@ -1,0 +1,30 @@
+/* Shared geometry: themes change color and typography, never control shapes. */
+:root[data-theme]{--radius-card:20px;--radius-field:10px;--radius-pill:999px}
+:root[data-theme] .button,
+:root[data-theme] .currency-switch,
+:root[data-theme] .currency-switch button,
+:root[data-theme] .segmented,
+:root[data-theme] .segmented button,
+:root[data-theme] .theme-switch,
+:root[data-theme] .positive-pill,
+:root[data-theme] .negative-pill{border-radius:var(--radius-pill)}
+:root[data-theme] .stat-card,
+:root[data-theme] .panel,
+:root[data-theme] .modal,
+:root[data-theme] .theme-option{border-radius:var(--radius-card)}
+:root[data-theme] .icon-button,
+:root[data-theme] .category-icon,
+:root[data-theme] .asset-icon,
+:root[data-theme] .asset-icon.gold.asset-logo{border-radius:50%}
+:root[data-theme] .brand-mark{width:35px;height:35px;border-radius:50%}
+:root[data-theme] input:not([type=checkbox]),
+:root[data-theme] select,
+:root[data-theme] textarea,
+:root[data-theme] .search-field,
+:root[data-theme] .month-picker,
+:root[data-theme] .notice,
+:root[data-theme] .mapping,
+:root[data-theme] .drop-zone,
+:root[data-theme] .category-tag{border-radius:var(--radius-field)}
+@media(min-width:761px){:root[data-theme] .nav-link{border-radius:var(--radius-pill)}}
+@media(max-width:760px){:root[data-theme] .nav-link{border-radius:10px 10px 0 0}:root[data-theme] .brand-mark{width:29px;height:29px}}

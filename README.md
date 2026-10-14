@@ -81,6 +81,14 @@ npm run build
 npm start
 ```
 
+## Appearance and Windows startup
+
+Choose Classic, Brass & Moss, or Dark through Settings → Appearance or the header theme selector. Themes share rounded controls and cards; the selection is saved in the current browser. The starter cryptocurrencies use locally bundled logos, and gold uses a gold-bar pictogram. Other assets keep letter placeholders.
+
+On Windows, `scripts/start-at-login.ps1` runs the production server quietly and reuses an existing Harbour instance. It requires Node on PATH and a completed production build. Assign it to a Task Scheduler logon task to start Harbour automatically; cloning the repository does not register a task. The helper keeps running with the server so Task Scheduler can restart it after an unexpected exit.
+
+Code updates preserve records when the same browser profile and local address are used. Financial records remain in browser storage and are not part of the repository.
+
 ## Test
 
 ```bash
