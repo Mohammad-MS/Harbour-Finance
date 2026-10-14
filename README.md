@@ -23,6 +23,7 @@ The app is deliberately local-first. Holdings, budgets, and approved transaction
 - CSV column mapping plus local PDF and screenshot extraction with PDF.js and Tesseract.js
 - Import review, transaction correction, debit/credit classification, and duplicate detection
 - Local JSON backup and restore, CSV export, responsive layouts, and keyboard-accessible forms
+- Two visual themes, Harbour classic and Brass & moss, switchable from the top bar or Settings and remembered per browser
 - WebMCP tools for reading a financial summary and opening the statement-review workflow
 
 ## Technical decisions
