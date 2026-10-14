@@ -1,0 +1,99 @@
+/* Brass & Moss theme: applied when <html data-theme="moss">. Classic Harbour styles live in style.css. */
+:root[data-theme=moss]{color:#1a2420;background:#e8ece3;--navy:#1c2b21;--ink:#1a2420;--muted:#5c6860;--border:#dde3d7;--green:#2f6b45;--lime:#c79a3e;--gold:#c79a3e;--red:#a9461c;--alloc-crypto:#1c2b21;--alloc-etf:#9db5a3;--alloc-gold:#c79a3e;--chart-line:#2f6b45;--chart-fill:#7f9c86}
+:root[data-theme=moss] :focus-visible{outline-color:#a57c2c}
+:root[data-theme=moss] h1,:root[data-theme=moss] h2,:root[data-theme=moss] h3,:root[data-theme=moss] .brand,:root[data-theme=moss] .chart-value,:root[data-theme=moss] .runway-total,:root[data-theme=moss] .donut strong{font-family:'Bricolage Grotesque',Manrope,sans-serif}
+:root[data-theme=moss] .amount-cell,:root[data-theme=moss] .legend b,:root[data-theme=moss] .allocation-legend b{font-family:'DM Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+/* Sidebar */
+:root[data-theme=moss] .sidebar{background:#1c2b21;color:#c9d3c6}
+:root[data-theme=moss] .brand{color:#f3f1e7}
+:root[data-theme=moss] .brand-mark{background:#c79a3e;color:#1c2b21;border-radius:50%;width:35px;height:35px}
+:root[data-theme=moss] .brand-dot{color:#c79a3e}
+:root[data-theme=moss] .workspace-label{color:#93a396}
+:root[data-theme=moss] .nav-link{color:#c9d3c6}
+:root[data-theme=moss] .nav-link:hover{background:#2a3d30;color:#fff}
+:root[data-theme=moss] .nav-link.active{background:#f3f1e7;color:#1c2b21;font-weight:600}
+:root[data-theme=moss] .sidebar-bottom>b{color:#f3f1e7;font-family:'Bricolage Grotesque',Manrope,sans-serif;font-weight:600;font-size:16px;line-height:1.4}
+:root[data-theme=moss] .privacy-icon{color:#c79a3e}
+:root[data-theme=moss] .profile{border-top-color:#2f4335}
+:root[data-theme=moss] .profile b{color:#f3f1e7}
+:root[data-theme=moss] .avatar{background:#2f4335;color:#e7ebe2}
+:root[data-theme=moss] .nav-count{background:#c79a3e;color:#1c2b21}
+@media(min-width:761px){:root[data-theme=moss] .nav-link{border-radius:999px}}
+
+/* Top bar and controls */
+:root[data-theme=moss] .topbar{background:#f7f8f3}
+:root[data-theme=moss] .top-meta{color:#5c6860}
+:root[data-theme=moss] .breadcrumb button{color:#5c6860}
+:root[data-theme=moss] .currency-switch,:root[data-theme=moss] .segmented,:root[data-theme=moss] .theme-switch{background:#eef1e9;border-color:#dde3d7;border-radius:999px}
+:root[data-theme=moss] .currency-switch button,:root[data-theme=moss] .segmented button{border-radius:999px;color:#5c6860}
+:root[data-theme=moss] .currency-switch .selected,:root[data-theme=moss] .segmented button.selected,:root[data-theme=moss] .segmented.small .selected{background:#1c2b21;color:#f3f1e7;box-shadow:none}
+:root[data-theme=moss] .icon-button{color:#5c6860}
+:root[data-theme=moss] .icon-button:hover{background:#e4e9df;color:#1c2b21}
+:root[data-theme=moss] .badge{background:#eef1e9;border-color:#dde3d7;color:#4f5b53}
+:root[data-theme=moss] .eyebrow{color:#6a766e}
+:root[data-theme=moss] .button{background:#f7f8f3;border-color:#c9d1c3;border-radius:999px;color:#1a2420}
+:root[data-theme=moss] .button.primary{background:#1c2b21;border-color:#1c2b21;color:#f3f1e7}
+:root[data-theme=moss] .button.primary:hover{background:#2f4335}
+:root[data-theme=moss] .button.danger{background:#fbf3ef;border-color:#ecd3c7;color:#a9461c}
+:root[data-theme=moss] .text-button{color:#7a5a1c}
+:root[data-theme=moss] .compact-select,:root[data-theme=moss] .month-picker,:root[data-theme=moss] input:not([type=checkbox]):not([type=month]),:root[data-theme=moss] select,:root[data-theme=moss] textarea,:root[data-theme=moss] .search-field{background:#fbfcf8;border-color:#d3dacd;color:#1a2420}
+:root[data-theme=moss] .month-picker input{color:#1a2420}
+:root[data-theme=moss] label{color:#4f5b53}
+:root[data-theme=moss] input[type=checkbox]{accent-color:#2f6b45}
+:root[data-theme=moss] .form-hint{color:#5c6860}
+
+/* Surfaces */
+:root[data-theme=moss] .stat-card,:root[data-theme=moss] .panel{background:#f7f8f3;border-color:#dde3d7;border-radius:20px}
+:root[data-theme=moss] .stat-card.dark{background:#1c2b21;border-color:#1c2b21;color:#f3f1e7}
+:root[data-theme=moss] .stat-card.dark .stat-label,:root[data-theme=moss] .dark .stat-foot{color:#c9d3c6}
+:root[data-theme=moss] .stat-label,:root[data-theme=moss] .stat-foot{color:#5c6860}
+:root[data-theme=moss] .stat-card h2{letter-spacing:-1.2px}
+:root[data-theme=moss] .stat-card h2 small,:root[data-theme=moss] .stat-card h2>span{color:#6a766e}
+:root[data-theme=moss] .stat-card.dark h2 small,:root[data-theme=moss] .stat-card.dark h2>span{color:#c9d3c6}
+:root[data-theme=moss] .positive-pill{background:#c79a3e;color:#1c2b21;border-radius:999px}
+:root[data-theme=moss] .mini-bars i{background:#c79a3e}
+:root[data-theme=moss] .dark .icon-button{color:#c9d3c6}
+:root[data-theme=moss] .dark .icon-button:hover{background:#2f4335;color:#fff}
+:root[data-theme=moss] .progress{background:#dde3d7;height:7px}
+:root[data-theme=moss] .progress i{background:#7f9c86}
+:root[data-theme=moss] .positive{color:#2f6b45}
+:root[data-theme=moss] .subtle-note,:root[data-theme=moss] .panel-heading p,:root[data-theme=moss] .chart-axis,:root[data-theme=moss] .chart-y,:root[data-theme=moss] .chart-source,:root[data-theme=moss] .donut small,:root[data-theme=moss] .legend>span,:root[data-theme=moss] .allocation-legend span,:root[data-theme=moss] .allocation-legend small,:root[data-theme=moss] .body-copy,:root[data-theme=moss] .source-list p{color:#5c6860}
+:root[data-theme=moss] .main-chart{background:repeating-linear-gradient(to top,transparent 0,transparent calc(25% - 1px),#e4e9df calc(25% - 1px),#e4e9df 25%)}
+:root[data-theme=moss] .chart-point{fill:#2f6b45}
+:root[data-theme=moss] .donut>div{background:#f7f8f3;border-color:#f7f8f3}
+:root[data-theme=moss] .legend b{color:#1a2420}
+:root[data-theme=moss] .asset-icon{background:color-mix(in srgb,var(--asset-color) 14%,#f7f8f3)!important;border-radius:50%}
+:root[data-theme=moss] th{color:#5c6860}
+:root[data-theme=moss] td,:root[data-theme=moss] .holdings-preview{border-color:#e4e9df}
+:root[data-theme=moss] td small,:root[data-theme=moss] th small,:root[data-theme=moss] .holdings-preview small{color:#6a766e}
+:root[data-theme=moss] tfoot td{background:#eef1e9}
+:root[data-theme=moss] .category-tag{background:#eef1e9;border-color:#dde3d7;color:#4f5b53}
+:root[data-theme=moss] footer{color:#6a766e}
+:root[data-theme=moss] #toast{background:#1c2b21;color:#f3f1e7;box-shadow:0 6px 30px #1c2b2133}
+:root[data-theme=moss] .modal{background:#f7f8f3;border-color:#dde3d7;border-radius:20px}
+:root[data-theme=moss] .modal::backdrop{background:#1c2b2166}
+:root[data-theme=moss] .modal-heading .icon-button{background:#eef1e9}
+:root[data-theme=moss] .mapping{background:#eef1e9;border-color:#dde3d7}
+
+/* Banners and feature cards */
+:root[data-theme=moss] .demo-banner,:root[data-theme=moss] .welcome-banner{background:#f3eedd;border-color:#e3d6b0;color:#5f4b1d}
+:root[data-theme=moss] .welcome-banner b{color:#1c2b21}
+:root[data-theme=moss] .next-step{background:#1c2b21;border-color:#1c2b21;color:#f3f1e7}
+:root[data-theme=moss] .next-step h3{color:#f3f1e7}
+:root[data-theme=moss] .next-step .eyebrow{color:#d8b56a}
+:root[data-theme=moss] .next-step p{color:#c9d3c6}
+:root[data-theme=moss] .next-step .button{background:#c79a3e;border-color:#c79a3e;color:#1c2b21}
+:root[data-theme=moss] .runway{background:#f3eedd;border-color:#e3d6b0}
+:root[data-theme=moss] .runway-total{color:#6b4e16}
+:root[data-theme=moss] .runway>p,:root[data-theme=moss] .calculation>div,:root[data-theme=moss] .runway-note{color:#5f553f}
+:root[data-theme=moss] .calculation b{color:#3f3212}
+:root[data-theme=moss] .runway-note{border-top-color:#e3d6b0}
+
+/* Import */
+:root[data-theme=moss] .drop-zone{background:#f7f8f3;border-color:#b9c2b3}
+:root[data-theme=moss] .drop-zone:hover,:root[data-theme=moss] .drop-zone.dragover{background:#eef1e9;border-color:#7f9c86}
+:root[data-theme=moss] .drop-zone>svg{color:#2f6b45}
+:root[data-theme=moss] .drop-zone .button{background:#1c2b21;border-color:#1c2b21;color:#f3f1e7}
+:root[data-theme=moss] .import-steps .active{color:#1c2b21}
+:root[data-theme=moss] .import-steps .active i{background:#f3eedd;border-color:#e3d6b0}
