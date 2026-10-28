@@ -4,9 +4,24 @@
 ![Node.js](https://img.shields.io/badge/Node.js-22%2B-3c873a)
 ![License](https://img.shields.io/badge/license-MIT-24364b)
 
-Harbour is a privacy-first personal finance dashboard that brings monthly budgeting and asset tracking into one calm workspace. It tracks crypto, USD-listed ETFs, and 24k physical gold; compares planned spending with reviewed bank transactions; and estimates how much room remains to invest after bills and reserves.
+Harbour is a privacy-first personal finance dashboard that brings monthly budgeting and asset tracking into one calm workspace. It tracks **any cryptocurrency or digital token**, USD-listed ETFs, and 24k physical gold; compares planned spending with reviewed bank transactions; and estimates how much room remains to invest after bills and reserves.
 
-![Harbour dashboard showing the example portfolio, market chart, allocation, and budget](./preview.png)
+![Harbour overview in the Brass & Moss theme, showing total portfolio, monthly spending, room to invest, market chart, and asset allocation](./docs/screenshots/overview-brass-moss.png)
+
+### Three looks, one workspace
+
+Switch between themes from the header or **Settings → Appearance**. Your choice is remembered in the browser.
+
+| Harbour classic | Harbour dark |
+| --- | --- |
+| ![Harbour overview in the classic navy and white theme](./docs/screenshots/overview-classic.png) | ![Harbour overview in the dark theme](./docs/screenshots/overview-dark.png) |
+
+<details>
+<summary>Monthly budget, with planned investments tracked separately from spending</summary>
+
+![Harbour monthly budget in the Brass & Moss theme, comparing planned and actual spending by category with an Investments row](./docs/screenshots/budget-brass-moss.png)
+
+</details>
 
 ## Why I built it
 
@@ -16,14 +31,16 @@ The app is deliberately local-first. Holdings, budgets, and approved transaction
 
 ## Highlights
 
-- Unified portfolio for ADA, FLUX, RENDER, XRP, custom cryptocurrencies, USD-listed ETFs, and 24k gold by gram
+- **Every kind of digital asset:** Bitcoin, Ethereum, stablecoins, altcoins, and other tokens are priced live from any CoinGecko listing. Anything without a public feed, such as private tokens, presale allocations, or NFTs, can be tracked with a manual price. The four starter coins in a new workspace are examples, not a limit.
+- One portfolio for digital assets, USD-listed ETFs, and 24k physical gold by the gram
+- Three themes (Harbour classic, Brass & Moss, and Harbour dark) with shared rounded controls, asset logos, and a theme switcher in the header
 - AED and USD display modes with an editable AED/USD planning rate
 - Live quote timestamps, stale-data labels, manual quote overrides, and partial-total handling when a feed fails
 - Monthly take-home income, category budgets, reserves, actual spending, and an investment-runway forecast
+- Planned monthly investing, tracked against recorded investment contributions and kept separate from spending
 - CSV column mapping plus local PDF and screenshot extraction with PDF.js and Tesseract.js
 - Import review, transaction correction, debit/credit classification, and duplicate detection
 - Local JSON backup and restore, CSV export, responsive layouts, and keyboard-accessible forms
-- Two visual themes, Harbour classic and Brass & moss, switchable from the top bar or Settings and remembered per browser
 - WebMCP tools for reading a financial summary and opening the statement-review workflow
 
 ## Technical decisions
