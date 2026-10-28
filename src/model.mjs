@@ -25,15 +25,15 @@ export const monthNow=()=>localDate().slice(0,7);
 export const sum=a=>a.reduce((s,n)=>s+n,0);
 export const round=n=>Math.round((n+Number.EPSILON)*100)/100;
 export function freshState(){return {version:1,settings:{currency:'AED',fx:DEFAULT_FX,autoRefresh:true},holdings:PRESETS.map(h=>({...h,quantity:0,costUSD:null,manualUSD:null})),plans:{},transactions:[],quotes:{},snapshots:[],imports:[]};}
-export function defaultPlan(){return {income:0,reserve:0,categories:Object.fromEntries(CATEGORIES.map(c=>[c.id,0]))};}
+export function defaultPlan(){return {income:0,reserve:0,investments:0,categories:Object.fromEntries(CATEGORIES.map(c=>[c.id,0]))};}
 export function monthlySummary(state,month){
  const plan=state.plans[month]||defaultPlan(),rows=state.transactions.filter(t=>t.date.startsWith(month));
  const actual=Object.fromEntries(CATEGORIES.map(c=>[c.id,round(sum(rows.filter(t=>t.category===c.id).map(t=>t.type==='expense'?t.amount:t.type==='refund'?-t.amount:0)))]));
  const spent=round(sum(Object.values(actual))),planned=round(sum(Object.values(plan.categories)));
  const income=round(sum(rows.filter(t=>t.type==='income').map(t=>t.amount))),invested=round(sum(rows.filter(t=>t.type==='investment').map(t=>t.amount)));
  const remaining=round(sum(CATEGORIES.map(c=>Math.max(0,(plan.categories[c.id]||0)-(actual[c.id]||0)))));
- const projected=round(spent+remaining);
- return {plan,rows,actual,spent,planned,income,invested,remaining,projected,room:round(plan.income-projected-plan.reserve-invested),cashRemainder:round(income-spent-invested),over:Math.max(0,round(spent-planned)),hasPlan:!!state.plans[month]};
+ const projected=round(spent+remaining),investPlanned=round(plan.investments||0);
+ return {plan,rows,actual,spent,planned,income,invested,investPlanned,investLeft:round(investPlanned-invested),remaining,projected,room:round(plan.income-projected-plan.reserve-invested),cashRemainder:round(income-spent-invested),over:Math.max(0,round(spent-planned)),hasPlan:!!state.plans[month]};
 }
 export function holdingValue(h,quotes){const q=quotes[h.id];const price=h.manualUSD??q?.priceUSD;return {price,source:h.manualUSD!==null&&h.manualUSD!==undefined?'Manual':q?.source||'Unavailable',quote:q,value:price==null?null:h.quantity*price,cost:h.costUSD==null?null:h.quantity*h.costUSD};}
 export function portfolioSummary(state){
@@ -99,14 +99,14 @@ export function validateState(s){
  if(!Array.isArray(s.holdings)||s.holdings.length>500||!Array.isArray(s.transactions)||s.transactions.length>100000||!s.transactions.every(validateTransaction))throw new Error('Backup contains invalid records.');
  const ids=new Set();for(const h of s.holdings){if(!h||typeof h.id!=='string'||ids.has(h.id)||!['crypto','etf','gold'].includes(h.type)||!Number.isFinite(h.quantity)||h.quantity<0||h.quantity>1e15||typeof h.name!=='string'||h.name.length>120||typeof h.symbol!=='string'||h.symbol.length>30||![h.costUSD,h.manualUSD].every(n=>n==null||(Number.isFinite(n)&&n>=0&&n<1e12)))throw new Error('Backup contains an invalid holding.');ids.add(h.id);}
  if(!s.plans||typeof s.plans!=='object'||Array.isArray(s.plans))throw new Error('Invalid budget plans.');
- for(const [month,p] of Object.entries(s.plans)){if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)||!p||![p.income,p.reserve,...CATEGORIES.map(c=>p.categories?.[c.id])].every(n=>Number.isFinite(n)&&n>=0&&n<=1e12))throw new Error('Backup contains an invalid budget.');}
+ for(const [month,p] of Object.entries(s.plans)){if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)||!p||![p.income,p.reserve,p.investments??0,...CATEGORIES.map(c=>p.categories?.[c.id])].every(n=>Number.isFinite(n)&&n>=0&&n<=1e12))throw new Error('Backup contains an invalid budget.');}
  // Market data is refetched; do not trust cached external values from backups.
  return {...freshState(),settings:{...s.settings},holdings:s.holdings.map(h=>({...h})),plans:s.plans,transactions:s.transactions.map(t=>({...t})),imports:Array.isArray(s.imports)?s.imports.filter(i=>typeof i.name==='string'&&Number.isFinite(i.count)&&typeof i.at==='string').slice(0,100):[]};
 }
 export function demoState(){
  const s=freshState(),month=monthNow();s.isDemo=true;s.holdings.forEach((h,i)=>{h.quantity=[12500,18000,850,4400,50][i];h.costUSD=[.21,.06,1.6,1.2,110][i];s.quotes[h.id]={priceUSD:[.245,.069,1.94,1.48,133.23][i],change24h:[2.6,-1.4,3.2,.8,null][i],source:'Example',asOf:new Date().toISOString()};});
  s.holdings.push({id:'voo',name:'Vanguard S&P 500',symbol:'VOO',type:'etf',quantity:18,costUSD:590,manualUSD:null,color:'#87a694',mark:'V'});s.quotes.voo={priceUSD:710.79,change24h:.54,source:'Example',asOf:new Date().toISOString()};
- s.plans[month]={income:20000,reserve:2500,categories:{rent:5500,utilities:800,groceries:1400,dining:1000,transport:700,shopping:750,health:300,subscriptions:250,other:300}};
+ s.plans[month]={income:20000,reserve:2500,investments:3000,categories:{rent:5500,utilities:800,groceries:1400,dining:1000,transport:700,shopping:750,health:300,subscriptions:250,other:300}};
  const values=[['Rent payment',5500,'rent',1],['DEWA utilities',640,'utilities',5],['Carrefour market',428,'groceries',7],['Spinneys groceries',312,'groceries',18],['Dinner with friends',385,'dining',12],['Coffee & meals',490,'dining',20],['Careem rides',320,'transport',16],['Noon purchase',825,'shopping',21],['Pharmacy',115,'health',22],['Spotify & subscriptions',189,'subscriptions',23]];
  s.transactions=values.map(([description,amount,category,day])=>({id:uid(),date:`${month}-${String(day).padStart(2,'0')}`,description,amount,category,type:'expense',account:'Example account',source:'Example'}));
  s.transactions.push({id:uid(),date:`${month}-01`,description:'Monthly salary',amount:20000,category:'other',type:'income',account:'Example account',source:'Example'});return s;
